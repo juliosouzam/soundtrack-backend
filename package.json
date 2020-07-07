@@ -4,7 +4,9 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon src/server.js"
+    "dev": "nodemon src/server.js",
+    "prebuild": "sucrase ./src -d ./dist --transforms imports",
+    "build": "node ./dist/server.js"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
