@@ -25,6 +25,7 @@ class StreamTrackController {
     response.writeHead(200, {
       'Content-Type': track.mimetype,
       'Content-Length': streamTrack.size,
+      'Accept-Ranges': 'bytes',
     });
 
     const highWaterMark = 128;

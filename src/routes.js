@@ -27,6 +27,10 @@ routes.get('/stream/:track_id', StreamTrackController.show);
 
 routes.use(authenticated);
 
+routes.get('/status', (request, response) => {
+  return response.json();
+});
+
 routes.get('/tracks', TrackController.index);
 routes.post('/tracks', upload.single('file'), TrackController.store);
 routes.get('/tracks/:track_id', TrackController.show);
